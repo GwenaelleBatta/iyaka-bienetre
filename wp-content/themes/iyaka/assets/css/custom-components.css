@@ -1,0 +1,47 @@
+@layer components {
+	.grid-default {
+		@apply gap-x-4 md:grid-cols-8 md:px-10 rl:px-0 rl:grid-cols-14 grid grid-cols-4 sm:px-8 px-4;
+	}
+
+	.px-default {
+		@apply md:px-10 rl:px-20 xl:px-32 px-6;
+	}
+
+	.grid-default-12 {
+		@apply grid grid-cols-4 md:grid-cols-8 rl:grid-cols-12 gap-x-4 px-4 md:px-12 rl:px-24;
+	}
+
+	.btn-primary {
+		@apply font-quicksand rounded-full font-semibold relative overflow-hidden !text-white border border-brand-dark py-3.5 px-7 text-xl mt-11 inline-block self-center
+		after:bg-brand-dark after:-z-10 after:w-full after:h-full after:left-0 after:top-0 after:absolute after:ease-all
+		;
+
+		&:hover,
+		&:focus-visible {
+			@apply !text-brand-dark;
+			&::after {
+				@apply -top-full;
+			}
+		}
+	}
+	.btn-secondary {
+		@apply font-quicksand font-semibold relative overflow-hidden  text-brand-light border border-brand-light py-3 px-5 text-xl mt-11 inline-block self-center
+		after:bg-brand-light after:w-full after:h-full after:left-0 after:-top-full after:absolute after:ease-all
+		;
+
+		&:hover,
+		&:focus-visible {
+			@apply text-white;
+			&::after {
+				@apply top-0;
+			}
+		}
+	}
+
+
+
+
+	.ease-all {
+		@apply transition-all duration-300 ease-in-out;
+	}
+}

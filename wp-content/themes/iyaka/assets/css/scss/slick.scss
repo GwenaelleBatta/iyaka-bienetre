@@ -1,0 +1,38 @@
+.slick-slider {
+	@apply max-h-screen w-full;
+
+	.slick-list {
+		@apply w-full max-h-screen flex;
+	}
+
+	.slick-track {
+		@apply m-0 h-full flex gap-5;
+
+		&::before,
+		&::after {
+			@apply content-none;
+		}
+	}
+}
+
+.slick-dotted {
+	@apply m-0 flex flex-col gap-6;
+
+	.slick-dots {
+		@apply flex items-center justify-center gap-2 static;
+
+		li {
+			@apply m-0 w-2 h-2 cursor-pointer relative;
+
+			.slick-bullet {
+				@apply inline-block rounded-full w-2 h-2  bg-grey/20 absolute inset-0 ease-all;
+			}
+
+			&.slick-active {
+				.slick-bullet {
+					@apply bg-brand-light;
+				}
+			}
+		}
+	}
+}

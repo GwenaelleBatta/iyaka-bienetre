@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Quicksand:wght@300..700&display=swap');
+
+
+html {
+	@apply font-opensans box-border scroll-smooth font-light bg-white;
+}
+
+a {
+	@apply hover:text-brand-dark focus-visible:text-brand-dark ease-all;
+}
+
+.text-content {
+	@apply text-lg md:text-xl xg:text-2xl md:leading-8 rg:leading-10  text-grey rl:gap-6 flex flex-col gap-4 ;
+
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		@apply uppercase font-quicksand text-brand-middle/75 xl:text-5xl rl:text-4xl md:text-3xl text-2xl mt-4 first:mt-0 font-bold md:!leading-snug;
+
+		+ h2,
+		+ h3,
+		+ h4,
+		+ h5,
+		+ h6 {
+			@apply mt-0;
+		}
+	}
+
+	strong {
+		@apply font-bold;
+	}
+
+	a {
+		@apply ease-all text-brand-light font-medium font-quicksand hover:text-brand-dark;
+	}
+
+	ul,
+	ol {
+		@apply marker:text-brand flex flex-col gap-2 ml-4 lg:ml-6 list-disc;
+
+		li {
+			> ul,
+			> ol {
+				@apply gap-0.5 lg:gap-1;
+			}
+		}
+	}
+
+	ol {
+		@apply marker:text-brand-dark list-decimal;
+	}
+}
+
+.featured-content {
+	@apply lg:text-4xl md:text-3xl text-xl font-semibold;
+}

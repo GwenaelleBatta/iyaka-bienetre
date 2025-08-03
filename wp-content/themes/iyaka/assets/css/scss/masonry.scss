@@ -1,0 +1,17 @@
+.masonry-grid {
+  .grid-item {
+    @apply p-1 md:p-2 max-rl:aspect-square w-full md:w-1/2 md:h-[28rem];
+
+    &.long-size {
+      @apply rl:h-[48rem] rl:w-1/2;
+    }
+
+    &.small-size {
+      @apply rl:h-[24rem] rl:w-1/4;
+    }
+
+    &.default-size {
+      @apply rl:h-[24rem] rl:w-1/2;
+    }
+  }
+}
