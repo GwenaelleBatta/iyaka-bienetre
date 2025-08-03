@@ -1,0 +1,255 @@
+header.double-lines-header {
+	.socials-menu {
+		@apply  flex items-center h-full gap-4 max-rg:mt-7 text-brand-light;
+	}
+
+	.main-header {
+		.burger-menu {
+			.lines {
+				@apply h-5 w-8 flex flex-col items-center justify-between ease-all;
+
+				> span {
+					@apply bg-brand-light block w-full h-0.5 ease-all;
+				}
+			}
+
+			&.with-border {
+				&:hover,
+				&:focus-visible {
+					@apply bg-brand-dark border-brand-dark;
+				}
+
+				.lines {
+					@apply max-rl:scale-90;
+				}
+			}
+
+			&.no-border {
+				&:hover,
+				&:focus-visible {
+					.lines {
+						> span {
+							@apply bg-brand-light;
+						}
+					}
+				}
+			}
+
+			&.close {
+				@apply bg-brand-middle;
+				.lines {
+					@apply h-8;
+					>span{
+						@apply bg-brand;
+					}
+
+					.line-1 {
+						@apply -rotate-45 -translate-x-1 translate-y-0.5 scale-x-[115%];
+					}
+					.line-2 {
+						@apply scale-x-0;
+					}
+					.line-3 {
+						@apply rotate-45 -translate-x-1 -translate-y-0.5 scale-x-[115%];
+					}
+				}
+			}
+
+			&.arrow {
+				.lines {
+					@apply h-8;
+
+					.line-1 {
+						@apply bg-white w-[60%] self-start -rotate-45 -translate-x-1.5 translate-y-0.5;
+					}
+					.line-2 {
+						@apply bg-white;
+					}
+					.line-3 {
+						@apply bg-white w-[60%] self-start rotate-45 -translate-x-1.5 -translate-y-0.5;
+					}
+				}
+			}
+		}
+
+		&.with-burger-on-desktop {
+			.header-mobile {
+				/* -----------
+				ATTENTION : remplacer `absolute max-rl:min-h-screen min-h-[80vh]` par `fixed min-h-screen` lors de l'utilisation sur un vrai site
+				----------- */
+
+				@apply -translate-y-[200vh] duration-700 transition-all ease-in-out z-10 absolute max-rl:min-h-screen min-h-[80vh] w-screen inset-x-0 top-0 flex flex-col items-center justify-center bg-grey text-white;
+
+				&.active {
+					@apply translate-y-0;
+				}
+
+				&.sub-menu-opened {
+					@apply after:visible after:opacity-100;
+				}
+			}
+
+			.header-menu {
+				@apply flex-col ;
+
+				.menu-item-has-children {
+					@apply max-rl:w-full;
+
+					> a {
+						@apply relative flex items-center justify-center rl:flex-col text-center w-full;
+
+						&::before {
+							@apply content-[''] inline-block ease-all h-3 w-3 rl:h-3.5 rl:w-3.5 rl:rotate-90 rl:left-1/2 rl:-translate-x-1/2 absolute  max-rl:right-6 rl:-bottom-5;
+						}
+					}
+
+					.sub-menu {
+						@apply ease-all bg-grey text-white flex flex-col items-center divide-y divide-white/20;
+						@apply -translate-y-[200vh] pt-48 absolute inset-0 z-50 min-h-screen;
+
+						&::after {
+							@apply content-[''] absolute bg-white h-3 w-3 rotate-45 top-0 left-1/2 -translate-x-1/2 -translate-y-1/2;
+						}
+
+						.menu-item {
+							@apply relative z-1 w-full flex;
+
+							> a {
+								@apply py-5 relative w-full flex items-center justify-center ease-all;
+
+								&:hover {
+									@apply hover:bg-white/10;
+								}
+							}
+						}
+					}
+
+					&.active {
+						.sub-menu {
+							@apply translate-y-0;
+						}
+					}
+				}
+			}
+		}
+
+		&.without-burger-on-desktop {
+			.burger-menu {
+				@apply rl:hidden;
+			}
+
+			.header-mobile {
+				/* -----------
+				ATTENTION : remplacer `max-rl:absolute` par `max-rl:fixed` lors de l'utilisation sur un vrai site
+				----------- */
+
+				@apply max-rl:-translate-y-[200vh] max-rl:duration-700 max-rl:transition-all max-rl:ease-in-out max-rl:z-10 max-rl:absolute max-rl:min-h-screen max-rl:w-screen max-rl:inset-x-0 max-rl:top-0 flex max-rl:flex-col items-center max-rl:pt-48 rl:justify-between max-rl:bg-brand max-rl:text-grey;
+
+				&.active {
+					@apply max-rl:translate-y-0;
+				}
+
+				&.sub-menu-opened {
+					@apply max-rl:after:visible max-rl:after:opacity-100;
+				}
+			}
+
+			.header-menu {
+				@apply max-rl:flex-col;
+
+				.menu-item-has-children {
+					@apply rl:relative max-rl:w-full;
+
+					> a {
+						@apply relative flex items-center justify-center rl:flex-col text-center w-full;
+
+						&::before {
+							@apply content-[''] inline-block ease-all h-3 w-3 rl:h-3.5 rl:w-3.5 rl:rotate-90 rl:left-1/2 rl:-translate-x-1/2 absolute  max-rl:right-6 rl:-bottom-5;
+						}
+					}
+
+					.sub-menu {
+						@apply ease-all max-rl:bg-grey max-rl:text-white rl:bg-white rl:text-black flex flex-col items-center rl:items-start divide-y divide-white/20 rl:py-2 rl:px-4;
+						@apply max-rl:-translate-y-[200vh] max-rl:pt-48 absolute max-rl:inset-0 z-50 rl:top-full rl:translate-y-3 max-rl:min-h-screen rl:w-fit rl:min-w-[200px] rl:opacity-0 rl:invisible rl:origin-top rl:scale-y-0;
+
+						&::after {
+							@apply content-[''] max-rl:content-none absolute bg-white h-3 w-3 rotate-45 top-0 left-1/2 -translate-x-1/2 -translate-y-1/2;
+						}
+
+						&::before {
+							@apply content-[''] max-rl:content-none absolute -z-1 rl:h-6 rl:w-full lg:bottom-full lg:inset-x-0;
+						}
+
+						.menu-item {
+							@apply relative z-1 w-full rl:px-0 rl:text-lg rl:items-start flex;
+
+							> a {
+								@apply py-5 rl:py-1.5 relative w-full flex items-center max-rl:justify-center ease-all;
+
+								&:hover {
+									@apply max-rl:hover:bg-white/10 rl:bg-brand-light/50 rl:pl-2;
+								}
+							}
+						}
+					}
+
+					&.active {
+						.sub-menu {
+							@apply max-rl:translate-y-0 rl:opacity-100 rl:visible rl:scale-y-100;
+
+							> a {
+								@apply rl:after:-rotate-90;
+							}
+						}
+
+						> a {
+							@apply rl:before:-rotate-90;
+						}
+					}
+				}
+			}
+		}
+
+		.header-menu {
+			@apply flex items-center text-xl font-medium font-quicksand uppercase lg:text-2xl rl:gap-16 xl:gap-20 2xl:gap-24 max-rl:px-6;
+
+			> .menu-item {
+				@apply flex items-center justify-center max-rl:border-b max-rl:border-b-brand-light max-rl:w-full max-rl:py-4 last:border-b-transparent;
+
+				> a {
+					@apply relative  w-max whitespace-nowrap z-1;
+
+					&:after {
+						@apply content-[''] bg-brand-light h-0.5 w-full absolute max-rl:left-1/2 max-rl:-translate-x-1/2 -bottom-1 left-0 ease-all scale-x-0 -z-1 origin-left;
+					}
+
+					&:hover,
+					&:focus-visible {
+						@apply text-brand-light after:scale-x-100;
+					}
+				}
+				&.current_page_item a{
+					@apply before:-z-1 before:rounded-sm before:inline-block before:w-20 before:h-3 before:bg-brand before:-translate-x-2 before:absolute before:-left-5 before:bottom-0;
+				}
+			}
+
+			&.last-item-is-btn {
+				> .menu-item:last-child {
+					> a {
+						@apply uppercase text-brand-light border border-brand-light text-lg py-2 px-5 ease-all inline-block overflow-hidden;
+
+						&::after {
+							@apply scale-x-100 w-full h-full inset-0 translate-x-full;
+						}
+					}
+
+					&:hover {
+						> a {
+							@apply text-white after:translate-x-0;
+						}
+					}
+				}
+			}
+		}
+	}
+}
