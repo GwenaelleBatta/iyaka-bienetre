@@ -8,12 +8,12 @@
 	}
 
 	.grid-default-12 {
-		@apply grid grid-cols-4 md:grid-cols-8 rl:grid-cols-12 gap-x-4 px-4 md:px-12 rl:px-24;
+		@apply grid grid-cols-4 md:grid-cols-8 rl:grid-cols-12 gap-x-4 px-8 md:px-16 rl:px-24 xl:px-36;
 	}
 
 	.btn-primary {
-		@apply font-quicksand rounded-full font-semibold relative overflow-hidden !text-white border border-brand-dark py-3.5 px-7 text-xl mt-11 inline-block self-center
-		after:bg-brand-dark after:-z-10 after:w-full after:h-full after:left-0 after:top-0 after:absolute after:ease-all
+		@apply font-quicksand rounded-full font-semibold relative overflow-hidden !text-white border border-brand-dark py-2.5  rg:py-3.5 px-7 text-lg rg:text-xl mt-11 inline-block self-center
+		after:bg-brand-dark after:z-1 after:w-full after:h-full after:left-0 after:top-0 after:absolute after:ease-all
 		;
 
 		&:hover,
