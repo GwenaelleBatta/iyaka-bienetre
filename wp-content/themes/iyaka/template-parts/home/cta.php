@@ -6,11 +6,11 @@ $img = get_field('cta_img');
 $button = get_field('cta_button');
 ?>
 
-<section aria-labelledby="cta" class="grid-default-12 max-rg:items-center max-rg:gap-12 max-rg:!flex max-rg:flex-col-reverse bg-brand/65 relative pt-12 pb-24 mt-40 mb-32">
+<section aria-labelledby="cta" class="grid-default-12 max-rg:items-center max-rg:gap-12 max-rg:!flex max-rg:flex-col-reverse bg-brand/65 relative pt-12 pb-24 mt-40 md:mb-32 mb-20">
     <div class="col-span-full rg:col-start-3 rg:col-span-6 rl:col-start-3 rl:col-span-10 lg:col-start-4 lg:col-span-9 xl:pl-10 h-full">
 
 
-        <h2 class="text-brand-light font-quicksand font-bold text-4xl md:text-5xl lg:text-6xl xg:text-6.5xl relative z-1 mb-6 rg:!leading-snug rl:max-w-[90%] 3xl:max-w-[70%]" id="cta"></h2>
+        <h2 class="text-brand-light font-quicksand font-bold text-4xl md:text-5xl lg:text-6xl xg:text-6.5xl relative z-1 mb-6 rg:!leading-snug rl:max-w-[90%] 3xl:max-w-[70%]" id="cta"><?= $title ?></h2>
         <div class="flex max-rl:flex-col max-3xl:justify-between 3xl:gap-40 max-rl:gap-14 items-center rl:items-end">
             <div class="text-content  rl:leading-10 rl:max-w-[650px]">
                 <?= $content ?>

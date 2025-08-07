@@ -14,10 +14,7 @@ $facebook = $informations ["contact_facebook"];
 $instagram = $informations ["contact_instagram"];
 $linkedin = $informations ["contact_linkedin"];
 ?>
-<section class="pb-20 rl:pb-40 pt-24">
-<!--    <h2 class="text-brand-light font-quicksand font-bold text-4xl md:text-5xl lg:text-6xl xg:text-6.5xl relative z-1  rg:!leading-snug rl:max-w-[90%] 3xl:max-w-[70%] "-->
-<!--        id="contact">--><?php //= $title ?><!--</h2>-->
-
+<section class="pb-20 rl:pb-40 pt-16">
     <div class="grid-default-12 rl:gap-2  gap-1 text-center relative mb-20 md:mb-40">
         <h2 class="text-brand-light font-quicksand font-bold text-4xl md:text-5xl lg:text-6xl xg:text-7xl relative z-1 col-span-3 col-start-2 max-md:text-end md:col-span-4 md:col-start-4 rl:col-start-7 rl:col-span-4">
             <?= $title?>

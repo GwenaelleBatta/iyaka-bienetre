@@ -24,6 +24,19 @@
 			}
 		}
 	}
+	.btn-primary-reverse {
+		@apply font-quicksand rounded-full font-semibold relative overflow-hidden !text-brand-light border border-brand-light py-2.5  rg:py-3.5 px-7 text-lg rg:text-xl mt-11 inline-block self-center
+		after:bg-brand-light after:z-1 after:w-full after:h-full after:left-0 after:-top-full after:absolute after:ease-all
+		;
+
+		&:hover,
+		&:focus-visible {
+			@apply !text-white;
+			&::after {
+				@apply top-0;
+			}
+		}
+	}
 	.btn-secondary {
 		@apply font-quicksand font-semibold relative overflow-hidden  text-brand-light border border-brand-light py-3 px-5 text-xl mt-11 inline-block self-center
 		after:bg-brand-light after:w-full after:h-full after:left-0 after:-top-full after:absolute after:ease-all
